@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulário 3</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+  <main class=" container">
+    <form action="resposta.php" method="POST" class="mt-2 p-4 border border-secondary-subtle">
+      <h3 class="fw-bold text-center">Sample Form</h3>
+      <div class="row mt-4">
+        <div class="col-2">
+          <label for="name" class="form-label fw-bold">Partner Name</label>
+        </div>
+        <div class="col-4">
+          <input type="text" name="name" id="name" class="form-control">
+        </div>
+        <div class="col-2">
+          <label for="email" class="form-label fw-bold">Partner Email ID</label>
+        </div>
+        <div class="col-4">
+          <input type="email" name="email" id="email" class="form-control">
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-2">
+          <label for="legalname" class="form-label fw-bold">Partner Legal Name</label>
+        </div>
+        <div class="col-4">
+          <input type="text" name="legalname" id="legalname" class="form-control">
+        </div>
+        <div class="col-2">
+          <label for="mobile" class="form-label fw-bold">Partner Mobile</label>
+        </div>
+        <div class="col-4">
+          <input type="text" name="mobile" id="mobile" class="form-control">
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-2">
+          <label for="addrees" class="form-label fw-bold">Partner Address</label>
+        </div>
+        <div class="col-10">
+          <textarea name="addrees" id="addrees" class="form-control"></textarea>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-2">
+          <label for="datestart" class="form-label fw-bold">Contract Start Date</label>
+        </div>
+        <div class="col-4">
+          <input type="date" name="datestart" id="datestart" class="form-control">
+        </div>
+        <div class="col-2">
+          <label for="dateexpiry" class="form-label fw-bold">Contract Expiry Date</label>
+        </div>
+        <div class="col-4">
+          <input type="date" name="dateexpiry" id="dateexpiry" class="form-control">
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-2">
+          <label for="minimumloan" class="form-label fw-bold">Minimum Loan Amount</label>
+        </div>
+        <div class="col-4">
+          <input type="number" name="minimumloan" id="minimumloan" class="form-control">
+        </div>
+        <div class="col-2">
+          <label for="maximumloan" class="form-label fw-bold">Maximum Loan Amount</label>
+        </div>
+        <div class="col-4">
+          <input type="number" name="maximumloan" id="maximumloan" class="form-control">
+        </div>
+      </div>
+      <div class="row mt-3 pt2">
+        <div class="col-2">
+          <label for="rate" class="form-label fw-bold">Interest Rate</label>
+        </div>
+        <div class="col-4">
+          <input type="text" name="rate" id="rate" class="form-control">
+        </div>
+        <div class="col-2">
+          <label for="deposit" class="form-label fw-bold">Deposit Amount</label>
+        </div>
+        <div class="col-4">
+          <input type="number" name="deposit" id="deposit" class="form-control">
+        </div>
+      </div>
+      <div class="row mt-4 d-flex justify-content-center">
+        <div class="col-1">
+          <button type="submit" class="btn btn-success">Save</button>
+        </div>
+      </div>
+    </form>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
