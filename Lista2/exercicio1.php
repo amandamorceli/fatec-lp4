@@ -7,8 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body class="container">
-    <h2>Exercício 1</h2>
-    <form action="exer1resp.php" method="POST">
+    <h2 class="mt-4">Exercício 1</h2>
+    <form action="exercicio1resp.php" method="POST">
         <div class="row mt-4">
             <div class="col-4">
                 <label for="valor1" class="form-label">Digite o valor 1</label>

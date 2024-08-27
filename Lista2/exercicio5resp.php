@@ -7,20 +7,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body class="container">
-    <h2 class="mt-5">Resposta do exercício 5</h2>
+    <h2 class="mt-4">Resposta do exercício 5</h2>
     <?php
     if ($_SERVER["REQUEST-METHOD"] == 'POST') {
         try {
             $nota1 = (int)$_POST['nota1'] ?? 0;
             $nota2 = (int)$_POST['nota2'] ?? 0;
             $nota3 = (int)$_POST['nota3'] ?? 0;
-            $resposta = ($nota1 + $nota2 + $nota3)/3
-            echo ""
-        } catch (Exception $e) {
+            
+            $resposta = ($nota1 + $nota2 + $nota3)/3;
 
-            //throw $th;
+            echo "<p>A média das notas é: $resposta</p>";
+        } catch (Exception $e) {
+          "Erro!".$e->getMessage();
         }
-        # code...
     }
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

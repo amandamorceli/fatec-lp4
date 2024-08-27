@@ -9,7 +9,7 @@
 </head>
 
 <body class="container">
-    <h2>Resposta do exercício 1</h2>
+    <h2 class="mt-4">Resposta do exercício 1</h2>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         try{
