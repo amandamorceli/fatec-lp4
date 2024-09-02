@@ -9,17 +9,19 @@
   <body class="container">
     <h2 class="mt-4">Resposta do exercício 5</h2>
     <?php
-    if ($_SERVER["REQUEST-METHOD"] == 'POST') {
+    if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         try {
             $nota1 = (int)$_POST['nota1'] ?? 0;
             $nota2 = (int)$_POST['nota2'] ?? 0;
             $nota3 = (int)$_POST['nota3'] ?? 0;
             
-            $resposta = ($nota1 + $nota2 + $nota3)/3;
+            $media = ($nota1 + $nota2 + $nota3)/3;
 
-            echo "<p>A média das notas é: $resposta</p>";
-        } catch (Exception $e) {
-          "Erro!".$e->getMessage();
+            echo "<p>A média das notas é: $media</p>";
+        } 
+        catch (Exception $e) 
+        {
+            "Erro!".$e->getMessage();
         }
     }
     ?>
