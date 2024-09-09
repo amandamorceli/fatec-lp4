@@ -9,7 +9,7 @@
   <body>
     <main class="container">
         <h2 class="mt-5">Exercício 2</h2>
-        <form action="resposta2.php" method="post">
+        <form action="resposta.php" method="post">
             <div class="row">
                 <div class="col-4">
                     <label for="numero1" class="form-label">Digite o valor 1:</label>
