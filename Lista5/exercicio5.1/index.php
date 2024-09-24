@@ -1,3 +1,6 @@
+<?php
+declare(strict_types=1);
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,7 +16,7 @@
         <?php for ($i=0; $i <= 4 ; $i++): ?>
                 <div class="col-2 mt-2">
                     <label for="nome[]" class="form-label">Nome</label>
-                    <input type="text" name="nome[]" class="form-control" placeholder="Nome<?= $i ?>"/>
+                    <input type="text" name="nome[]" class="form-control" placeholder="Nome <?= $i +1?>"/>
                 </div>
         <?php endfor; ?>
         </div>
@@ -21,26 +24,38 @@
         <?php for ($i=0; $i <= 4 ; $i++): ?>
                 <div class="col-2 mt-2">
                     <label for="numero[]" class="form-label">Nº de telefone</label>
-                    <input type="number" name="numero[]" class="form-control" placeholder="Nº de telefone<?= $i ?>"/>
+                    <input type="number" name="numero[]" class="form-control" placeholder="Nº de telefone <?= $i +1 ?>"/>
                 </div>
         <?php endfor; ?>
         </div>
         <button type="submit" class="mt-2 btn btn-primary">Enviar</button>
     </form>
     <?php
-    if($_SERVER["REQUEST_METHOD"] == 'POST'){
+
+    function adicionarContato($nomes, $telefones, $contato): array
+    {
+        foreach ($nomes as $chave => $nome) 
+        {
+            $telefone = $telefones[$chave];
+            if (!array_key_exists($nome, $contato) && !in_array($telefone, $contato)) 
+            {
+                $contato[$nome] = $telefone;
+            }
+        }
+        return $contato;
+    }
+
+    if($_SERVER["REQUEST_METHOD"] == 'POST')
+    {
         try {
             $nome = $_POST['nome'];
             $telefone = $_POST['numero'];
-            $data = [];
+            $contato = [];
 
-            foreach ($nome as $chave => $valor){
-                $auxiliar = array_search($valor, $data);
-                if($auxiliar == false){
-                    $data[$valor]=$telefone[$chave];
-                }
-            }
-            foreach ($data as $nome => $telefone) {
+            $contato = adicionarContato($nome, $telefone, $contato);
+
+            echo "<p>*** Lista de contatos ***</p>";
+            foreach ($contato as $nome => $telefone) {
                 echo "<p>$nome: $telefone</p>";
             }
 
