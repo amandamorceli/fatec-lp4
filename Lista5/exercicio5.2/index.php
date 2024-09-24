@@ -18,11 +18,11 @@ declare(strict_types=1);
                     <label for="nomes<?= $i ?>" class="form-label">Informe o nome: </label>
                     <input type="text" class="form-control" name="nomes[]" id="nomes<?= $i ?>" placeholder="Nome<?= $i +1?>">
                 </div>
-                <?php for ($e = 0; $e <= 2; $e++): ?>
+                <?php for ($j = 0; $j <= 2; $j++): ?>
                     <div class="col-2">
                         <div class="mb-3">
-                            <label for="notas<?= $i ?><?= $e ?>" class="form-label">Informe a nota: </label>
-                            <input type="number" class="form-control" name="notas[<?= $i ?>][]" id="notas<?= $i ?><?= $e ?>" step="0.1" placeholder="Nota<?= $e +1?>">
+                            <label for="notas<?= $i ?><?= $j ?>" class="form-label">Informe a nota: </label>
+                            <input type="number" class="form-control" name="notas[<?= $i ?>][]" id="notas<?= $i ?><?= $j ?>" step="0.1" placeholder="Nota<?= $j +1?>">
                         </div>
                    </div>
                 <?php endfor; ?>
@@ -34,3 +34,4 @@ declare(strict_types=1);
             </div>
         </div>
     </form>
+    <?php ?>
