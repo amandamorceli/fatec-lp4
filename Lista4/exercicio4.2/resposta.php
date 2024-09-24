@@ -1,3 +1,7 @@
+<?php
+
+declare(strict_types=1);
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,14 +13,22 @@
   <body class="container">
     <h2 class = "mt-4">Resposta 2</h2>
     <?php
+
+    function formatarPalavara($palavra)
+    {
+        $maiuscula = strtoupper($palavra);
+        $minuscula = strtolower($palavra);
+
+        echo nl2br("<p>Palavra formatada:\nMinúscula: $minuscula \nMaiúscula: $maiuscula</p>");
+    }
+
     if ($_SERVER["REQUEST_METHOD"]=='POST') 
     {
         try {
-            $palavra = $_POST['valor'];
-            $maiuscula = strtoupper($palavra);
-            $minuscula = strtolower($palavra);
+            $palavra = (string)$_POST['valor'];
 
-            echo nl2br("<p>$minuscula \n $maiuscula</p>");
+            formatarPalavara($palavra);
+          
         } catch (Exception $e) {
             echo"ERRO!".$e->getMessage();
         }

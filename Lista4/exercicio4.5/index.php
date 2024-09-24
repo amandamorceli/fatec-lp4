@@ -17,7 +17,7 @@
         </div>
         <div class="row mt-3">
             <div class="col-3">
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-primary">Calcular raiz</button>
             </div>
         </div>
     </form>

@@ -1,3 +1,6 @@
+<?php
+declare(strict_types=1);
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,14 +12,20 @@
   <body class="container">
     <h2 class = "mt-4">Resposta do Exercício 7</h2>
     <?php
+
+    function CalcularDIas($data1, $data2): int
+    {
+        $intervalo = $data1->diff($data2);
+        return $intervalo->days;
+    }
     if ($_SERVER["REQUEST_METHOD"]=='POST') 
     {
         try {
             $data1 = new DateTime($_POST['data1']);
             $data2 = new DateTime($_POST['data2']);
+            $dias = calcularDias($data1, $data2);
 
-            $intervalo = $data1->diff($data2);
-            echo "Diferença entre as datas: {$intervalo->days} dias.";
+            echo "Diferença entre as datas é de $dias dias.";
 
         } catch (Exception $e) {
             echo "ERRO".$e->getMessage();

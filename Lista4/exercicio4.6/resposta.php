@@ -1,3 +1,6 @@
+<?php
+declare(strict_types=1);
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,15 +12,21 @@
   <body class="container">
     <h2 class = "mt-4">Resposta do exercício 6</h2>
     <?php
+
+    function transformarInteiro($float)
+    {
+        $inteiro = intval($float);
+        echo "{$inteiro}";
+    }
+
     if($_SERVER["REQUEST_METHOD"]=='POST')
     {
         try {
-            $numero = $_POST['numero'];
+            $numero = (float)$_POST['numero'];
+            $float = number_format($numero, 2, ",", ".");
 
-            $float = str_replace(',', '.', $numero);
-            $inteiro = intval($float);
+            transformarInteiro($float);
 
-            echo"{$inteiro}";
         } catch (Exception $e) {
             echo "Erro!".$e->getMessage();
         }

@@ -1,3 +1,6 @@
+<?php
+declare(strict_types=1);
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,14 +11,28 @@
   </head>
   <body class="container">
     <h2 class = "mt-4">Resposta do exercício 5</h2>
-    <?php
+    <?php 
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    
+    function calcularRaiz($valor)
+    {
+        if ($valor < 0)
+        {
+            echo "<p>Não existe raiz de valor negativo.</p>";
+            return;
+        }
+        $raiz = sqrt($valor);
+        echo "<p>A raiz quadrada de {$valor} é {$raiz}.</p>"; 
+    }
+
     if ($_SERVER["REQUEST_METHOD"]=='POST') 
     {
         try {
-            $valor = $_POST['valor'] ?? 0;
+            $valor = (float)$_POST['valor'] ?? 0;
 
-            $raiz = sqrt($valor);
-            echo "<p>A raiz quadrada de {$valor} é {$raiz}.</p>";
+            calcularRaiz($valor);
+
         } catch (Exception $e) {
             echo "Erro!".$e->getMessage();
         }

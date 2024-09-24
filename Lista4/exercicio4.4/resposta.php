@@ -1,3 +1,6 @@
+<?php
+declare(strict_types=1);
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,16 +12,22 @@
   <body class="container">
     <h2 class = "mt-4">Resposta do exercício 4</h2>
     <?php
+
+    function validarData($dia, $mes, $ano)
+    {
+          $validacaoData = checkdate($dia, $mes, $ano);
+          $resultado = $validacaoData == true ? "Data válida." : "Data inválida.";
+          echo $resultado;
+    }
+
     if ($_SERVER["REQUEST_METHOD"]=='POST') 
     {
         try {
-            $dia = $_POST['dia'] ?? 0;
-            $mes = $_POST['mes'] ?? 0;
-            $ano = $_POST['ano'] ?? 0;
+            $dia = (int)$_POST['dia'] ?? 0;
+            $mes = (int)$_POST['mes'] ?? 0;
+            $ano = (int)$_POST['ano'] ?? 0;
 
-            $validacaoData = checkdate($dia, $mes, $ano);
-            $resultado = $validacaoData == true ? "Data válida." : "Data inválida.";
-            echo $resultado;
+            validarData($dia, $mes, $ano);
 
         } catch (Exception $e) {
             echo "Erro!".$e->getMessage();

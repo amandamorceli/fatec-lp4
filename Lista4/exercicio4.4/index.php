@@ -17,7 +17,8 @@
             <div class="col-3">
                 <label for="mes" class="form-label">Informe o mês:</label>
                 <input type="number" name="mes" id="mes" class="form-control">
-            </div>]<div class="col-3">
+            </div>
+            <div class="col-3">
                 <label for="ano" class="form-label">Informe o ano:</label>
                 <input type="number" name="ano" id="ano" class="form-control">
             </div>

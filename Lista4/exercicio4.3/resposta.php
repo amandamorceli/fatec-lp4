@@ -1,4 +1,6 @@
-
+<?php
+declare(strict_types=1);
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,15 +12,23 @@
   <body class="container">
     <h2 class = "mt-4">Resposta do exercício 3</h2>
     <?php
-    if ($_SERVER["REQUEST_METHOD"]=='POST') {
-        try {
-            $primeiraPalavra = $_POST['palavra1'];
-            $segundaPalavra = $_POST['palavra2'];
+    function verificarPalavra($palavra1, $palavra2): string
+    {
+        $palavraContida = strpos($palavra1, $palavra2);
+        $resultado = $palavraContida === false ? "A palavra '{$palavra2}' não está contida na palavra '{$palavra1}'." : 
+        "A palavra '{$palavra2}' está contida na palavra '{$palavra1}'";
+        return $resultado;
+    }
 
-            $palavraContida = strpos($primeiraPalavra, $segundaPalavra);
-            $resposta = $palavraContida === false ? "{$segundaPalavra} não está contida em {$primeiraPalavra}." : 
-            "{$segundaPalavra} está contida em {$primeiraPalavra}";
-            echo "<p>{$resposta}</p>";
+    if ($_SERVER["REQUEST_METHOD"]=='POST') 
+    {
+        try 
+        {
+            $primeiraPalavra = (string)$_POST['palavra1'];
+            $segundaPalavra = (string)$_POST['palavra2'];
+
+            $resposta = verificarPalavra($primeiraPalavra, $segundaPalavra);
+            echo "{$resposta}";
 
         } catch (Exception $e) {
             echo "Erro!".$e->getMessage();
