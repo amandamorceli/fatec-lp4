@@ -1,6 +1,7 @@
 <?php 
     require_once 'cabecalho.php'; 
     require_once 'navbar.php'; 
+    require_once '../funcoes/usuarios.php'
 ?>
 
 <div class="container mt-5">
@@ -17,17 +18,28 @@
             </tr>
         </thead>
         <tbody>
+
+            <?php
             
+            $usuarios = todosUsuarios();
+            foreach($usuarios as $usuario):
+
+            ?>
+
             <tr>
-                <td>1</td>
-                <td>Usuario</td>
-                <td>usuario@gmail.com</td>
-                <td>Administrador</td>
+                <td><?= $usuario['id'] ?></td>
+                <td><?= $usuario['nome'] ?></td>
+                <td><?= $usuario['email'] ?></td>
+                <td><?php echo $usuario['nivel'] == 'adm' ? 'Administrador' : 'Colaborador'; ?></td>
                 <td>
-                    <a href="excluir_usuario.php" class="btn btn-danger">Excluir</a>
+                    <a href="excluir_usuario.php?id=<?= $usuario['id'] ?>" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
-            
+
+            <?php
+            endforeach;
+            ?>        
+
         </tbody>
     </table>
 </div>
