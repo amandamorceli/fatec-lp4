@@ -1,6 +1,6 @@
 <?php
 
-require_once('../funcoes/usuario.php');
+require_once('../funcoes/usuarios.php');
 
     session_start(); //fc para trabalhar com var $sesseion
     if ($_SERVER['REQUEST_METHOD'] == "POST") 
